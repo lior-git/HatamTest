@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dynamic Hebrew Calendar</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div id="app">
+      <header>
+        <div class="controls">
+          <button id="prevBtn">&lt;</button>
+          <h2 id="currentDisplay"></h2>
+          <button id="nextBtn">&gt;</button>
+        </div>
+        <div class="view-toggle">
+          <button id="monthViewBtn" class="active">Month</button>
+          <button id="weekViewBtn">Week</button>
+          <button id="exportBtn" class="btn-secondary">Export (.ics)</button>
+        </div>
+      </header>
+
+      <div class="day-headers">
+        <div>Sun</div>
+        <div>Mon</div>
+        <div>Tue</div>
+        <div>Wed</div>
+        <div>Thu</div>
+        <div>Fri</div>
+        <div>Sat</div>
+      </div>
+
+      <div id="calendar-grid"></div>
+    </div>
+
+    <!-- Event Modal -->
+    <div id="eventModal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h3 id="modalDate"></h3>
+        <form id="eventForm">
+          <input
+            type="text"
+            id="eventTitle"
+            placeholder="Event Title"
+            required
+          />
+          <input type="time" id="eventTime" />
+          <button type="submit">Save Event</button>
+        </form>
+        <div id="eventList"></div>
+      </div>
+    </div>
+
+    <script src="index.js"></script>
+  </body>
+</html>
